@@ -2,6 +2,21 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+## What's in the stack
+
+- Multi-region Fly app deployment with Docker
+- Multi-region Fly PostgreSQL Cluster
+- Healthcheck endpoint for Fly backups region fallbacks
+- Database ORM with Prisma
+- Styling with Chakra UI
+- Code formatting with Prettier
+- Linting with ESLint
+- Static Types with TypeScript
+
+## Installation
+
+`npx create-remix --template muco-rolle/country-stack`
+
 ## Fly Setup
 
 1. [Install `flyctl`](https://fly.io/docs/getting-started/installing-flyctl/)
