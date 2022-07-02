@@ -15,7 +15,22 @@
     "build": "remix build",
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "generate": "prisma generate",
+    "lint:fix": "eslint --config .eslintrc.commit.js --fix --cache --ext .ts,.tsx app",
+    "lint": "eslint --config .eslintrc.commit.js --ext .ts,.tsx app",
+    "pre-commit": "lint-staged",
+    "prettify": "prettier --write app"
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": [
+      "eslint --fix --config .eslintrc.commit.js"
+    ],
+    "*.(js|jsx|json|ts|tsx|html)": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.0",
@@ -34,11 +49,16 @@
     "zod": "^3.17.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@remix-run/dev": "^1.6.3",
     "@remix-run/eslint-config": "^1.6.3",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "eslint": "^8.19.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "prisma": "^4.0.0",
     "typescript": "^4.7.4"
   },
