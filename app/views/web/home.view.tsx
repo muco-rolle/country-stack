@@ -9,7 +9,6 @@ export function HomeView() {
           Remix Stack for deploying to Fly.io with Postgres, Chakra UI,
           formatting, linting, etc. Written in Typescript.
         </Text>
-
         <Button
           as="a"
           href="https://en.wikipedia.org/wiki/Country_music"
